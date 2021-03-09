@@ -17,11 +17,13 @@ func FromGin(c *gin.Context) *zap.Logger {
 		panic(fmt.Errorf("gin context is nil"))
 	}
 
+	// Get logger from gin context with context key.
 	v, ok := c.Get(ginContextKey)
 	if !ok {
 		return globalFactory.Get()
 	}
 
+	// Gin context stores value with string, we need to check if the type is match.
 	l, ok := v.(*zap.Logger)
 	if !ok {
 		panic(fmt.Errorf("gin context key matched with wrong type: %v", l))
