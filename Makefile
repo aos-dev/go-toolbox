@@ -20,7 +20,7 @@ vet:
 	@go vet ./...
 	@echo "ok"
 
-build: tidy check
+build: tidy format check
 	@echo "build storage"
 	@go build -tags tools ./...
 	@echo "ok"
