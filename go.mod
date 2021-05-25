@@ -1,4 +1,4 @@
-module github.com/aos-dev/go-toolbox
+module github.com/beyondstorage/go-toolbox
 
 go 1.15
 
